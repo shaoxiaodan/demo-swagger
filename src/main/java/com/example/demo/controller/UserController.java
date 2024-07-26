@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.User;
+import com.example.demo.request.AddUserRequest;
 import com.example.demo.utils.JsonData;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
@@ -41,7 +43,7 @@ public class UserController {
 
 	@ApiOperation("用户添加")
 	@PostMapping("/add")
-	public JsonData addUser() {
+	public JsonData addUser(@RequestBody AddUserRequest addUserRequest) {
 		return JsonData.buildSuccess();
 	}
 
