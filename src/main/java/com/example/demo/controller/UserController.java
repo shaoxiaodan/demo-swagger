@@ -16,6 +16,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
@@ -43,6 +45,10 @@ public class UserController {
 
 	@ApiOperation("用户添加")
 	@PostMapping("/add")
+	@ApiResponses({
+		@ApiResponse(responseCode = "200", description = "重定向到用户列表"),
+		@ApiResponse(responseCode = "0", description = "添加失败")
+	})
 	public JsonData addUser(@RequestBody AddUserRequest addUserRequest) {
 		return JsonData.buildSuccess();
 	}
