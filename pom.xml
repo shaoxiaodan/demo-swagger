@@ -8,7 +8,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.2</version>
+		<version>2.4.5</version>
+		<!-- <version>3.3.2</version> -->
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -52,10 +53,16 @@
 
 		<!-- springfox(swagger v3 api文档接口)依赖 -->
 		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- <dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.0.4</version>
-		</dependency>
+		</dependency> -->
 
 	</dependencies>
 
